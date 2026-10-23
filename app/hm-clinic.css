@@ -117,5 +117,5 @@ body{background:#fcfdff}
 .treatment .treatment-front{padding:16px;min-height:350px}
 .treatment .service-title{padding-inline:6px;margin-bottom:15px}
 .treatment .service-hint{padding:0 6px 8px;margin-top:auto}
-.inner-detail-photo{object-fit:contain;background:#eaf3fb}
+.inner-page .inner-detail-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#eaf3fb}
 @media(max-width:560px){.treatment .treatment-front{padding:10px;min-height:280px}.treatment .service-card-image{margin-bottom:14px;border-radius:10px}.treatment .service-title{padding-inline:3px;font-size:15px}.treatment .service-hint{padding-inline:3px;font-size:9px}}
