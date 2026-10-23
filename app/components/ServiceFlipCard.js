@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function ServiceIcon({ arrow = false, sparkle = false }) {
   return <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -31,7 +32,7 @@ export default function ServiceFlipCard({ service }) {
     }}
   >
     <button type="button" className="treatment-front" tabIndex={expanded ? -1 : 0} aria-hidden={expanded || undefined} aria-expanded={expanded} aria-label={`Explore ${service.title}`} onClick={() => setExpanded(!expanded)}>
-      <span className="service-art"><ServiceIcon /><span className="service-art-accent"><ServiceIcon sparkle /></span></span>
+      <Image sizes="(max-width: 380px) 90vw, (max-width: 900px) 45vw, 380px" className="service-card-image" src={service.image} alt={`${service.title} illustration`} width={800} height={600} loading="lazy" decoding="async" />
       <span className="service-title">{service.title}</span>
       <span className="service-hint">Explore treatment <ServiceIcon arrow /></span>
     </button>

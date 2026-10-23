@@ -1,9 +1,9 @@
 .brand .brand-logo{width:64px;height:64px;object-fit:contain;border-radius:8px;flex-shrink:0}
 .brand{font-size:21px}.brand-sub{font-size:9px;letter-spacing:1.8px}
 .hm-promotion{margin-top:64px;margin-bottom:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;overflow:hidden;border-radius:24px;background:#071e3c;color:#fff;box-shadow:0 20px 60px #06274b15;scroll-margin-top:120px}
-/* Clip the white borders embedded in the original promotion poster. */
-.hm-promotion-art{position:relative;min-width:0;aspect-ratio:394/492;overflow:hidden;background:#071e3c}
-.hm-promotion-art img{position:absolute;left:0;top:-2.85%;display:block;width:100%;height:105.7%;max-height:none;object-fit:cover}
+/* HD poster is borderless and fills the promotion panel. */
+.hm-promotion-art{position:relative;min-width:0;aspect-ratio:1086/1449;overflow:hidden;background:#071e3c}
+.hm-promotion-art img{position:absolute;left:0;top:0;display:block;width:100%;height:100%;max-height:none;object-fit:cover}
 .hm-promotion-copy{min-width:0;padding:clamp(24px,3vw,44px);align-self:center;overflow-wrap:break-word}
 .hm-promotion-copy .button{max-width:100%;white-space:normal;text-align:center;justify-content:center}
 .hm-promotion-copy .eyebrow{color:#82c9ff}.hm-promotion-copy h2{font-size:clamp(30px,3.4vw,46px);line-height:1.2;color:#fff;margin:18px 0 24px}.hm-promotion-copy h2 em{color:#83cbff}
@@ -48,3 +48,74 @@ body{background:#fcfdff}
 @media(max-width:560px){#treatments .service-title{font-size:16px}.hm-doctor-info{padding:24px}.hm-team .section-heading{padding-bottom:12px}.hm-promotion{border-radius:20px}.hm-promotion-copy .eyebrow{font-size:8px;letter-spacing:1px}}
 @media(max-width:380px){#treatments .treatment-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.hm-doctor-card{transition:none}.hm-doctor-card:hover{transform:none}}
+
+/* Matching presentation for About, Services, FAQ and treatment pages. */
+.inner-page{background:#fcfdff;color:#173751}
+.inner-banner{position:relative;isolation:isolate;overflow:hidden;padding:80px 24px;background:radial-gradient(ellipse at top right,#24658e 0%,#103c64 45%,#082540 100%)}
+.inner-banner:after{content:'';position:absolute;z-index:-1;width:340px;height:340px;border:1px solid #b2ddff22;border-radius:50%;right:-80px;top:-160px;box-shadow:0 0 0 45px #b2ddff08,0 0 0 90px #b2ddff05;pointer-events:none}
+.inner-banner h1{max-width:900px;margin:0 auto 22px;font-size:clamp(32px,4.5vw,58px);letter-spacing:-1.8px;text-wrap:balance}
+.inner-banner nav{width:fit-content;max-width:100%;margin-inline:auto;padding:9px 18px;border:1px solid #d3eaff30;border-radius:30px;background:#ffffff08;color:#d9edfc}
+.inner-banner nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.inner-heading>span{background:#e8f2fa;color:#245e8a;padding:7px 14px;letter-spacing:1.4px}
+.inner-heading i{background:#6da9d1;border-radius:10px}.inner-heading i:after{display:none}
+.inner-page .button{border-radius:12px;background:#155b92;color:#fff}.inner-page .button:hover{background:#0d426e}
+.inner-tint{background:linear-gradient(130deg,#eef6fc,#f6f9fc);border-radius:48px 0 0 0}
+.inner-service-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.inner-service-grid .flip-treatment{overflow:hidden;border:1px solid #dce7f2;border-radius:20px;background:linear-gradient(145deg,#fff,#f3f8fd);box-shadow:0 8px 26px #123e6b06}
+.inner-service-grid .treatment-back{background:linear-gradient(145deg,#0d3459,#155b92)}
+.page-search>div{border-radius:15px;background:#fff;box-shadow:0 8px 24px #123e6b06;padding:8px;border-color:#cddfed}
+.page-search>div:focus-within{border-color:#4889b9;box-shadow:0 0 0 3px #4889b915}
+.page-search button{border-radius:9px;background:#eaf3fa;color:#155b92}
+.inner-tabs button{border:1px solid #d9e6f0;border-radius:30px;background:#fff;color:#315c7d;padding:13px 23px}
+.inner-tabs button[aria-pressed=true]{background:#123f65;box-shadow:0 6px 16px #123f6514;border-color:#123f65;color:#fff}
+.inner-advantage,.inner-concerns article,.inner-sidebar,.inner-sidebar-cta,.inner-note,.inner-visit-steps>div{border-radius:20px}
+.inner-advantage{border:1px solid #e0eaf2;box-shadow:0 14px 40px #16385606}
+.inner-advantage img,.inner-about>img,.inner-detail-photo{border-radius:20px}
+.inner-values>div{border-color:#dce7f0}.inner-values>div>span:first-child{color:#245e8a}
+.inner-faq details{border:1px solid #dce7f0;border-radius:16px;overflow:hidden;box-shadow:0 6px 22px #123e6b04}
+.inner-faq details[open]{border-color:#aacbe4;background:#f1f7fc}
+.inner-faq summary span{border-radius:50%;background:#e6f1f9;color:#245e8a}
+.inner-faq details[open] summary span{background:#155b92;color:#fff}
+.inner-faq details p{line-height:1.85;color:#4d6376}
+.inner-concerns article{border:1px solid #dce7f0;background:#fff}
+.inner-cta{padding:44px;border-radius:24px;background:radial-gradient(ellipse at top right,#25668d,#103b61 70%);box-shadow:0 18px 44px #123e6b14}
+.inner-cta h2{color:#fff}.inner-cta p{color:#d8e9f5}.inner-cta .button{background:#eaf6ff;color:#103f65}.inner-cta .button:hover{background:#fff}
+.inner-sidebar{background:#eef5fb;border:1px solid #dce7f0}.inner-sidebar>a[aria-current=page]{color:#123f65;border-left:3px solid #4b91c0;padding-left:12px}
+.inner-sidebar-cta{background:#123f65}.inner-sidebar-cta .button{background:#eaf6ff;color:#123f65}
+.visit-planner{background:#f0f6fc;border:1px solid #dce7f0;border-radius:22px}.planner-fields input,.planner-fields select,.planner-result textarea{border-radius:10px}
+.visit-checklist label{border-radius:13px}.inner-visit-steps>div{background:#eef5fb}.inner-note{background:#edf5fb;border-left-color:#6da9d1}
+@media(max-width:900px){.inner-service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.inner-banner{padding:60px 24px}.inner-cta{padding:32px}}
+@media(max-width:560px){.inner-banner{padding:48px 20px}.inner-banner h1{letter-spacing:-1px}.inner-banner nav{font-size:11px;padding:8px 14px}.inner-service-grid{gap:12px}.inner-cta{padding:28px 24px}.inner-tabs button{padding:11px 14px}.inner-tint{border-radius:28px 0 0 0}.inner-heading h2{text-wrap:balance}}
+@media(max-width:380px){.inner-service-grid{grid-template-columns:1fr}}
+
+/* Service discovery and contact shortcuts. */
+.feature-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 0 32px}
+.feature-filters button{border:1px solid #cbddea;border-radius:30px;padding:11px 18px;background:white;color:#244f71;font:inherit;font-size:13px;min-height:44px}
+.feature-filters button[aria-pressed=true]{background:#123f65;border-color:#123f65;color:white}
+.contact-tools{margin:18px 0}.contact-tools>div{display:flex;flex-wrap:wrap;gap:10px}.contact-tools button{border:1px solid #cbddea;border-radius:10px;padding:10px 14px;min-height:44px;background:#eff6fc;color:#155b92;font:inherit;font-size:12px;font-weight:600}
+.contact-tools>p{font-size:12px;line-height:1.6;color:#355a76;margin:10px 0 0;overflow-wrap:anywhere}.contact-tools>p:empty{display:none}
+@media(max-width:767px){.booking-launcher,.floating-call{display:none!important}.feature-filters{gap:8px}.feature-filters button{font-size:12px;padding:10px 14px}}
+
+/* A single compact header row on phones; contact actions live in the bottom bar. */
+@media(max-width:800px){
+  html{scroll-padding-top:84px}
+  .site-header .nav-wrap{min-height:72px;padding:10px 18px;gap:0 12px;flex-wrap:wrap}
+  .site-header .brand{gap:9px;flex:1;min-width:0;font-size:clamp(17px,4.5vw,22px);letter-spacing:-.6px}
+  .site-header .brand .brand-logo{width:44px;height:48px;border-radius:0}
+  .site-header .brand>span{white-space:nowrap}
+  .site-header .menu-button{display:flex;width:44px;height:44px;min-width:44px;margin:0;border:1px solid #dce7f0;border-radius:12px;background:#f3f8fc;box-shadow:none}
+  .site-header .header-contact-actions{display:none}
+  .site-header .site-navigation{flex-basis:100%;margin-top:10px;padding:8px 0;max-height:calc(100dvh - 160px);border-top:1px solid #e1ebf3}
+  .site-header .site-navigation:not(.is-open){display:none}
+  .site-header .site-navigation>a,.site-header .dropdown-toggle{min-height:46px;padding:12px;font-size:14px}
+  .site-header .dropdown-panel{border-radius:12px;border-top:0;padding:4px 12px;background:#f1f7fc}
+}
+@media(max-width:360px){.site-header .nav-wrap{padding-inline:12px;gap:8px}.site-header .brand{font-size:16px;gap:5px}.site-header .brand .brand-logo{width:38px}}
+
+/* Service illustrations retain the same frame across all cards. */
+.treatment .service-card-image{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:13px;margin-bottom:18px;background:#e9f3fb}
+.treatment .treatment-front{padding:16px;min-height:350px}
+.treatment .service-title{padding-inline:6px;margin-bottom:15px}
+.treatment .service-hint{padding:0 6px 8px;margin-top:auto}
+.inner-detail-photo{object-fit:contain;background:#eaf3fb}
+@media(max-width:560px){.treatment .treatment-front{padding:10px;min-height:280px}.treatment .service-card-image{margin-bottom:14px;border-radius:10px}.treatment .service-title{padding-inline:3px;font-size:15px}.treatment .service-hint{padding-inline:3px;font-size:9px}}

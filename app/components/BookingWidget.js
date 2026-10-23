@@ -127,7 +127,7 @@ export default function BookingWidget() {
     <dialog ref={dialog} className="booking-dialog" aria-labelledby="booking-title" onKeyDown={containTab} onClose={() => { const target = returnFocus.current; (target?.isConnected && target.getClientRects().length ? target : trigger.current)?.focus(); }} onClick={event => { if (event.target === event.currentTarget) { const rect = event.currentTarget.getBoundingClientRect(); if (event.clientX < rect.left || event.clientY < rect.top || event.clientX > rect.right || event.clientY > rect.bottom) dialog.current?.close(); } }}>
       <div className="booking-layout">
         <aside className="booking-welcome">
-          <span className="booking-clinic">H&M DENTAL CARE · PINDI SULTAN PUR</span>
+          <span className="booking-clinic">H&M DENTAL CARE · KHARIAN</span>
           <span className="booking-welcome-art" aria-hidden="true">✧</span>
           <h2>A little care.<br /> A brighter<br /><em>beginning.</em></h2>
           <p>Let’s find a time for your smile. Share a few details and start a conversation with our clinic.</p>

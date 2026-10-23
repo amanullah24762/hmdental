@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { clinic } from './clinic';
 
 // Mount once, after the page content, alongside the existing BookingWidget.
 // At integration, move any existing bottom-fixed launcher above this bar or
@@ -38,9 +39,11 @@ export default function MobileContactBar() {
     <>
       <div ref={spacerRef} className="mobile-contact-space" aria-hidden="true" />
       <nav ref={barRef} className="mobile-contact-bar" aria-label="Clinic contact actions">
-        <a href="tel:+923086878587" aria-label="Call Clinic at 0308 6878587">
+        <a href={clinic.telephone} aria-label={`Call ${clinic.name} at ${clinic.phone}`}>
           Call Clinic
         </a>
+        <a href={`https://wa.me/${clinic.whatsappNumber}?text=${encodeURIComponent("Hello H&M Dental Care, I would like to ask about a visit.")}`} target="_blank" rel="noreferrer">WhatsApp</a>
+        <a href={clinic.mapURL} target="_blank" rel="noreferrer">Directions</a>
         <button type="button" onClick={requestAppointment} aria-haspopup="dialog">
           Book a Visit
         </button>
@@ -58,9 +61,9 @@ export default function MobileContactBar() {
             position: fixed;
             inset-inline: 0;
             bottom: 0;
-            z-index: 5;
+            z-index: 25;
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 8px;
             box-sizing: border-box;
             padding: 10px max(12px, env(safe-area-inset-right, 0px))
@@ -82,7 +85,7 @@ export default function MobileContactBar() {
             border: 1px solid #3158ad;
             border-radius: 6px;
             font: inherit;
-            font-size: 14px;
+            font-size: 11px;
             font-weight: 600;
             line-height: 1.3;
             text-align: center;

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import BookingAction from './BookingAction';
+import ContactTools from './ContactTools';
 import { clinic } from './clinic';
 
 export function VisitPlanner({ initialService = '' }) {
@@ -14,5 +15,5 @@ export function VisitChecklist() {
 }
 
 export function VisitLocation() {
- return <section className="visit-location"><div><span className="extra-kicker">Close to home</span><h2>Find your way<br />to a familiar smile.</h2><p>{clinic.address}</p><a className="button" href={clinic.mapURL} target="_blank" rel="noreferrer">Get directions ↗</a></div><div className="location-details"><article><span>01</span><div><h3>Call before you visit</h3><p>Confirm your appointment time and the dentist’s availability.</p></div></article><article><span>02</span><div><h3>Plan your arrival</h3><p>Find us above National Bank of Pakistan, opposite City Book Depot.</p></div></article><article><span>03</span><div><h3>Need a little help?</h3><p>Call <a href={clinic.telephone}>{clinic.phone}</a> for directions or appointment enquiries.</p></div></article></div></section>;
+ return <section className="visit-location"><div><span className="extra-kicker">Close to home</span><h2>Find your way<br />to a familiar smile.</h2><p>{clinic.address}</p><a className="button" href={clinic.mapURL} target="_blank" rel="noreferrer">Get directions ↗</a><ContactTools /></div><div className="location-details"><article><span>01</span><div><h3>Call before you visit</h3><p>Confirm your appointment time and the dentist’s availability.</p></div></article><article><span>02</span><div><h3>Plan your arrival</h3><p>Find us on Kharian Dinga Road, Kharian. Open the Google Maps link for directions to the clinic.</p></div></article><article><span>03</span><div><h3>Need a little help?</h3><p>Call <a href={clinic.telephone}>{clinic.phone}</a> for directions or appointment enquiries.</p></div></article></div></section>;
 }
