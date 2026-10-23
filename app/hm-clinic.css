@@ -119,3 +119,25 @@ body{background:#fcfdff}
 .treatment .service-hint{padding:0 6px 8px;margin-top:auto}
 .inner-page .inner-detail-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#eaf3fb}
 @media(max-width:560px){.treatment .treatment-front{padding:10px;min-height:280px}.treatment .service-card-image{margin-bottom:14px;border-radius:10px}.treatment .service-title{padding-inline:3px;font-size:15px}.treatment .service-hint{padding-inline:3px;font-size:9px}}
+
+/* Compact mobile footer with separate navigation and contact areas. */
+@media(max-width:767px){
+  footer,footer.inner-footer{padding-top:30px;background:linear-gradient(145deg,#103f69,#082b49);color:#fff}
+  footer .container{width:calc(100% - 36px)}
+  footer .footer-main,footer.inner-footer .footer-main{grid-template-columns:minmax(0,1fr);gap:24px;padding-bottom:24px}
+  footer .footer-main>div:first-child{grid-column:auto}
+  footer .brand{gap:12px;font-size:21px;letter-spacing:-.6px}
+  footer .brand .brand-logo{width:48px;height:52px;padding:4px;border-radius:12px}
+  footer .footer-main>div>p{font-size:13px;line-height:1.7;color:#d3e4f1;margin:12px 0 0}
+  footer .footer-main h3{font-size:14px;line-height:1.4;margin:0 0 12px;letter-spacing:.2px}
+  footer .footer-main>div:nth-child(2){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px;border-top:1px solid #ffffff20;padding-top:20px}
+  footer .footer-main>div:nth-child(2)>h3{grid-column:1/-1}
+  footer .footer-main>div:not(:first-child)>a{font-size:13px;line-height:1.5;margin:0;padding:10px 0;min-height:40px;color:#e3eff8}
+  footer .footer-main>div:last-child{padding:18px 20px;border:1px solid #ffffff20;border-radius:16px;background:#ffffff08}
+  footer .footer-main>div:last-child>p{margin:0 0 10px;max-width:32ch}
+  footer .footer-main>div:last-child>a[href^="tel:"]{font-size:18px;font-weight:700;color:#fff;padding-bottom:6px}
+  footer .footer-bottom{padding:16px 0 20px;gap:10px;display:flex;flex-wrap:wrap;align-items:center;font-size:11px;line-height:1.5;color:#c7dbea;border-top:1px solid #ffffff20}
+  footer .footer-bottom>span:nth-child(2){display:none}
+  footer .footer-bottom>a{margin-left:auto;padding:7px 10px;border-radius:8px;background:#ffffff0d;color:#e4f1fc}
+}
+@media(max-width:360px){footer .brand{font-size:18px}footer .footer-bottom{font-size:10px}}
