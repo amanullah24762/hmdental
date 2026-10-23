@@ -1,0 +1,21 @@
+/* Keep dropdown chevrons optically centred with their labels. */
+.site-navigation .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.4;
+}
+
+.site-navigation .dropdown-toggle > span {
+  display: block;
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  margin: 0 2px 0 0;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  font-size: 0;
+  line-height: 0;
+  transform: translateY(-2px) rotate(45deg);
+}

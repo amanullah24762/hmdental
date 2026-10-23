@@ -1,0 +1,17 @@
+.brand .brand-logo{width:64px;height:64px;object-fit:contain;border-radius:8px;flex-shrink:0}
+.brand{font-size:21px}.brand-sub{font-size:9px;letter-spacing:1.8px}
+.hm-promotion{margin-top:64px;margin-bottom:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;overflow:hidden;border-radius:24px;background:#071e3c;color:#fff;box-shadow:0 20px 60px #06274b15;scroll-margin-top:120px}
+/* Clip the white borders embedded in the original promotion poster. */
+.hm-promotion-art{position:relative;min-width:0;aspect-ratio:394/492;overflow:hidden;background:#071e3c}
+.hm-promotion-art img{position:absolute;left:0;top:-2.85%;display:block;width:100%;height:105.7%;max-height:none;object-fit:cover}
+.hm-promotion-copy{min-width:0;padding:clamp(24px,3vw,44px);align-self:center;overflow-wrap:break-word}
+.hm-promotion-copy .button{max-width:100%;white-space:normal;text-align:center;justify-content:center}
+.hm-promotion-copy .eyebrow{color:#82c9ff}.hm-promotion-copy h2{font-size:clamp(30px,3.4vw,46px);line-height:1.2;color:#fff;margin:18px 0 24px}.hm-promotion-copy h2 em{color:#83cbff}
+.hm-promotion-copy>p:not(.eyebrow){color:#d2e0f1}.hm-offer-doctors{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.hm-offer-doctors span{border:1px solid #6197c9;border-radius:30px;padding:7px 14px;font-size:13px}
+.hm-offer-phone{display:block;font-weight:700;margin-top:20px}.hm-promotion-copy small{display:block;color:#b9cbe0;margin-top:18px}
+.hm-doctor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.hm-doctor-card{border:1px solid #dce6ef;border-radius:20px;overflow:hidden;background:#f7faff}.hm-doctor-photo{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top}.hm-doctor-initials{height:160px;display:grid;place-items:center;background:linear-gradient(135deg,#092d52,#0863ad);color:#fff;font-size:60px;font-weight:700;letter-spacing:-3px}.hm-doctor-info{padding:28px}.hm-doctor-info h3{font-size:27px;margin:8px 0}.hm-doctor-info p{margin-bottom:20px}.hm-doctor-info button{background:none;border:0;padding:0;text-align:left}
+@media(max-width:900px){.hm-promotion{grid-template-columns:1fr;margin-top:32px}.hm-promotion-art{width:100%}.hm-promotion-copy{padding:32px}.hm-promotion-copy h2{font-size:clamp(28px,5vw,40px)}}
+@media(max-width:700px){.hm-doctor-grid{grid-template-columns:1fr}.hm-promotion-copy{padding:28px 24px}.brand{font-size:17px}.brand .brand-logo{width:50px;height:50px}.brand-sub{font-size:8px;letter-spacing:1px}.hm-doctor-photo{height:auto;max-height:none}}
+@media(max-width:400px){.hm-promotion-copy{padding:24px 18px}.hm-promotion-copy .button{width:100%;padding-inline:16px}.hm-offer-doctors span{max-width:100%}}
+
+.home-services-more{display:flex;justify-content:center;margin-top:36px}

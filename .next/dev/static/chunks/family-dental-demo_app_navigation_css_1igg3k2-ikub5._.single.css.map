@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/family-dental-demo/app/navigation.css"],"sourcesContent":["/* Keep dropdown chevrons optically centred with their labels. */\n.site-navigation .dropdown-toggle {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  line-height: 1.4;\n}\n\n.site-navigation .dropdown-toggle > span {\n  display: block;\n  flex: 0 0 8px;\n  width: 8px;\n  height: 8px;\n  padding: 0;\n  margin: 0 2px 0 0;\n  border-right: 2px solid currentColor;\n  border-bottom: 2px solid currentColor;\n  font-size: 0;\n  line-height: 0;\n  transform: translateY(-2px) rotate(45deg);\n}\n"],"names":[],"mappings":"AACA;;;;;;;AAOA"}}]
+}

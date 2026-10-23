@@ -1,0 +1,427 @@
+/* Shared alignment rules for the homepage, interior pages and booking flow. */
+body {
+  overflow-wrap: break-word;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+button, .button {
+  line-height: 1.4;
+}
+
+h1, h2, h3, p, figure, fieldset {
+  min-width: 0;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p, address {
+  text-align: start;
+}
+
+.nav-wrap > *, .section-heading > *, .showcase-heading > *,
+.inner-about > *, .inner-advantage > *, .inner-detail > *,
+.visit-planner > *, .visit-checklist > *, .visit-location > *,
+.footer-main > *, .booking-layout > * {
+  min-width: 0;
+}
+
+.site-header .nav-wrap {
+  align-items: center;
+}
+
+.brand {
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand > span {
+  text-align: left;
+}
+
+.site-navigation {
+  align-items: center;
+}
+
+.site-navigation > a, .site-navigation .dropdown-toggle {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.4;
+}
+
+.site-navigation > a {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-panel a {
+  text-align: left;
+  line-height: 1.5;
+}
+
+.button, .nav-cta, .text-link, .card-link,
+.sequence-read-more, .floating-call {
+  align-items: center;
+}
+
+.button {
+  text-align: center;
+}
+
+.button > svg, .text-link > svg, .floating-call > svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.section-heading, .showcase-heading, .map-heading,
+.comparison-heading {
+  align-items: flex-end;
+}
+
+.section-heading h2, .showcase-heading h2, .map-heading h2 {
+  margin-bottom: 0;
+}
+
+.section-heading > p, .showcase-heading > p {
+  margin-bottom: 0;
+}
+
+.inner-heading, .inner-heading h2, .inner-banner,
+.inner-banner h1, .sequence-heading, .sequence-heading h2 {
+  text-align: center;
+}
+
+.inner-centered, .steps-note, .booking-bottom-note {
+  text-align: center;
+}
+
+.inner-heading h2 {
+  line-height: 1.25;
+}
+
+.inner-service-grid, .treatment-grid, .sequence-grid,
+.inner-concerns {
+  align-items: stretch;
+}
+
+.inner-service-card {
+  min-width: 0;
+  height: 100%;
+  text-align: left;
+}
+
+.inner-service-card h3 {
+  min-height: 2.8em;
+  line-height: 1.4;
+  margin: 0 0 14px;
+}
+
+.inner-service-card p {
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+
+.inner-service-icon {
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+
+.inner-read {
+  align-items: center;
+  gap: 12px;
+  line-height: 1.4;
+}
+
+.inner-service-list > div {
+  align-items: center;
+}
+
+.inner-service-list h3 {
+  line-height: 1.5;
+  text-align: left;
+}
+
+.inner-service-list > div > svg {
+  flex-shrink: 0;
+}
+
+.inner-service-list > div > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 114px;
+  min-height: 40px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.inner-tabs {
+  align-items: stretch;
+}
+
+.inner-tabs button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 52px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.inner-faq summary, .faq-list summary {
+  align-items: center;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.inner-faq summary > span, .faq-list summary > span {
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.inner-concerns article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inner-concerns article h3 {
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.inner-concerns article p {
+  line-height: 1.8;
+}
+
+.inner-cta > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.inner-cta > .button {
+  flex-shrink: 0;
+}
+
+.inner-visit-steps p {
+  line-height: 1.7;
+}
+
+.inner-sidebar > a {
+  align-items: center;
+  line-height: 1.5;
+}
+
+.inner-sidebar > a > span {
+  flex-shrink: 0;
+}
+
+.page-search > div {
+  align-items: center;
+}
+
+.page-search input, .page-search button {
+  min-height: 44px;
+  line-height: 1.4;
+}
+
+.search-empty p, .search-empty h3 {
+  text-align: center;
+}
+
+.planner-fields {
+  align-items: start;
+}
+
+.planner-fields label, .booking-field {
+  text-align: left;
+  line-height: 1.5;
+}
+
+.planner-fields input, .planner-fields select {
+  min-height: 46px;
+  line-height: 1.4;
+}
+
+.planner-fields select, .booking-field input {
+  max-width: 100%;
+}
+
+.visit-checklist label {
+  align-items: center;
+  line-height: 1.7;
+}
+
+.visit-checklist input {
+  margin: 0;
+}
+
+.location-details article {
+  align-items: flex-start;
+}
+
+.location-details article > span {
+  flex: 0 0 36px;
+  line-height: 1.3;
+}
+
+.location-details h3 {
+  line-height: 1.5;
+}
+
+.footer-main {
+  align-items: start;
+}
+
+.footer-main h3 {
+  line-height: 1.5;
+}
+
+.footer-main > div:not(:first-child) > a {
+  line-height: 1.7;
+}
+
+.footer-bottom {
+  align-items: center;
+}
+
+.booking-launcher, .booking-actions, .booking-next,
+.booking-option, .booking-times label {
+  align-items: center;
+}
+
+.booking-launcher > span:nth-child(2) {
+  line-height: 1.4;
+}
+
+.booking-launcher small {
+  line-height: 1.5;
+}
+
+.booking-welcome, .booking-main, .booking-main h2,
+.booking-welcome h2, .booking-summary {
+  text-align: left;
+}
+
+.booking-progress li {
+  line-height: 1.4;
+}
+
+.booking-progress li > span {
+  flex-shrink: 0;
+}
+
+.booking-options {
+  align-items: stretch;
+}
+
+.booking-option-symbol {
+  flex: 0 0 23px;
+  text-align: center;
+}
+
+.booking-option > span:nth-of-type(2) {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.booking-times label > span:first-of-type {
+  flex: 0 0 30px;
+  text-align: center;
+  line-height: 1;
+}
+
+.booking-times label > span:nth-of-type(2) {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.booking-times strong, .booking-times small {
+  line-height: 1.5;
+}
+
+.booking-back, .booking-next {
+  min-height: 48px;
+  line-height: 1.4;
+}
+
+.booking-close {
+  display: grid;
+  place-items: center;
+  padding: 0 0 2px;
+}
+
+@media (max-width: 800px) {
+  .site-navigation {
+    align-items: stretch;
+  }
+
+  .site-navigation > a, .site-navigation .dropdown-toggle {
+    min-height: 46px;
+    text-align: left;
+  }
+
+  .inner-cta > .button {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .section-heading, .showcase-heading, .map-heading,
+  .comparison-heading {
+    align-items: flex-start;
+  }
+
+  .section-heading > p, .showcase-heading > p {
+    margin-top: 18px;
+  }
+
+  .inner-service-card h3 {
+    min-height: 2.8em;
+  }
+
+  .inner-service-list > div > a {
+    min-width: 88px;
+    min-height: 38px;
+    padding-inline: 10px;
+  }
+
+  .inner-tabs button {
+    flex: 1 1 120px;
+  }
+
+  .inner-cta > .button {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .inner-visit-steps > div {
+    align-items: center;
+  }
+
+  .inner-visit-steps > div > span {
+    flex: 0 0 32px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+  }
+
+  .booking-actions {
+    align-items: stretch;
+  }
+}

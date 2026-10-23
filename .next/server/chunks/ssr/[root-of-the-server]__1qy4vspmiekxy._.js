@@ -1,0 +1,3 @@
+module.exports=[[46013,a=>{var b=a.i(74056);a.n(b)},2800,(a,b,c)=>{b.exports=a.r(18622)},58529,(a,b,c)=>{b.exports=a.r(2800).vendored["react-rsc"].ReactServerDOMTurbopackServer}],18622,(a,b,c)=>{b.exports=a.x("next/dist/compiled/next-server/app-page-turbo.runtime.prod.js",()=>require("next/dist/compiled/next-server/app-page-turbo.runtime.prod.js"))},74056,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(58529);a.n(d("[project]/family-dental-demo/node_modules/next/dist/client/components/builtin/global-error.js"))},78554,function(a){a.n(a.i(46013))}];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__1qy4vspmiekxy._.js.map
