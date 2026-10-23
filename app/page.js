@@ -1,4 +1,5 @@
 'use client';
+import SiteFooter from './components/SiteFooter';
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
@@ -37,7 +38,7 @@ function Icon({ name = 'tooth', className = '' }) {
 }
 
 function Brand() {
-  return <a className="brand" href="#home" aria-label="H&M Dental Care home"><img className="brand-logo" src="/images/hm-dental-logo.jpeg" alt="" width="72" height="48" /><span>H&amp;M Dental Care</span></a>;
+  return <a className="brand" href="#home" aria-label="H&M Dental Care home"><img className="brand-logo" src="/images/hm-dental-logo.webp" alt="" width="72" height="48" /><span>H&amp;M Dental Care</span></a>;
 }
 
 function Photo({ src, alt, className = '', priority = false }) {
@@ -55,6 +56,9 @@ function HeroParticleNetwork() {
     const hero = canvas?.closest('.hero');
     if (!canvas || !context || !hero) return;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // Keep a lighter network on phones; static rendering respects motion/data preferences.
+    const mobileNetwork = window.matchMedia('(pointer: coarse)').matches;
+    const saveData = navigator.connection?.saveData === true;
     let width = 0;
     let height = 0;
     let particles = [];
@@ -113,7 +117,8 @@ function HeroParticleNetwork() {
 
     function tick(time) {
       frame = 0;
-      if (disposed || !visible || document.hidden || reducedMotion.matches) return;
+      if (disposed || !visible || document.hidden || reducedMotion.matches || saveData) return;
+      if (lastTime && time - lastTime < 1000 / (mobileNetwork ? 20 : 30)) { frame = requestAnimationFrame(tick); return; }
       const delta = lastTime ? Math.min((time - lastTime) / 1000, .05) : 0;
       lastTime = time;
       draw(delta);
@@ -126,7 +131,7 @@ function HeroParticleNetwork() {
       lastTime = 0;
       if (disposed) return;
       draw();
-      if (visible && !document.hidden && !reducedMotion.matches) frame = requestAnimationFrame(tick);
+      if (visible && !document.hidden && !reducedMotion.matches && !saveData) frame = requestAnimationFrame(tick);
     }
 
     function resize() {
@@ -136,12 +141,12 @@ function HeroParticleNetwork() {
       const previousHeight = height;
       width = rect.width;
       height = rect.height;
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      const ratio = Math.min(window.devicePixelRatio || 1, mobileNetwork ? 1 : 1.5);
       canvas.width = Math.round(width * ratio);
       canvas.height = Math.round(height * ratio);
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
-      const minimumCount = width >= 600 && width <= 1100 ? 85 : 50;
-      const count = Math.min(175, Math.max(minimumCount, Math.round(width * height / 8500)));
+      const minimumCount = mobileNetwork ? 20 : 24;
+      const count = Math.min(mobileNetwork ? 28 : 45, Math.max(minimumCount, Math.round(width * height / 24000)));
       if (previousWidth && previousHeight) {
         for (const particle of particles) {
           particle.x *= width / previousWidth;
@@ -196,7 +201,7 @@ function HeroParticleNetwork() {
           expiresAt,
         });
       }
-      const overflow = particles.length - 350;
+      const overflow = particles.length - (mobileNetwork ? 32 : 60);
       if (overflow > 0) {
         let removed = 0;
         particles = particles.filter(particle => {
@@ -317,13 +322,18 @@ export default function Home() {
             <p className="eyebrow">H&M Dental Care · Kharian</p>
             <h1>A little care.<br /><em>A brighter smile.</em></h1>
             <div className="hero-care-columns"><div><span className="hero-care-icon"><Icon name="heart" /></span><h2>For your family</h2><p>A welcoming first step for every generation. Share your questions and plan your next dental visit.</p></div><div><span className="hero-care-icon"><Icon name="chat" /></span><h2>Care starts here</h2><p>Talk about your smile, explore available treatment options, and understand what comes next.</p></div></div>
-            <button className="button" onClick={event => inquire('', event.currentTarget)}>Book an Appointment <Icon name="arrow" /></button>
+            <div className="hero-primary-actions"><button className="button" onClick={event => inquire('', event.currentTarget)}>Book an Appointment <Icon name="arrow" /></button><a className="hero-services-link" href="#treatments">Explore our services <span aria-hidden="true">↗</span></a></div>
             <div className="hero-smile-badge"><strong>Smile</strong><span>A little brighter.</span></div>
           </div>
           <div className="hero-visit-strip"><span className="hero-strip-icon"><Icon name="tooth" /></span><p><span>LET’S PLAN YOUR VISIT</span> Your next smile starts with a conversation.</p><a href={PHONE}><Icon name="phone" /> {clinic.phone} <Icon name="arrow" /></a></div>
         </div>
       </section>
       <div className="smile-ribbon" aria-hidden="true"><div>{[0, 1, 2, 3].map(item => <span key={item}>YOUR SMILE, OUR STARTING POINT <span className="ribbon-star">✳</span> CARE FOR EVERY GENERATION <span className="ribbon-star">✳</span> KHARIAN <span className="ribbon-star">✳</span></span>)}</div></div>
+      <nav className="container visit-shortcuts" aria-label="Find what you need">
+        <a href="#promotion"><span className="shortcut-icon"><Icon name="chat" /></span><span><strong>Free consultation</strong><small>Start with a conversation</small></span><span aria-hidden="true">↗</span></a>
+        <a href="#doctors"><span className="shortcut-icon"><Icon name="heart" /></span><span><strong>Meet your dentists</strong><small>Get to know your care team</small></span><span aria-hidden="true">↗</span></a>
+        <a href="#contact"><span className="shortcut-icon"><Icon name="pin" /></span><span><strong>Visit our clinic</strong><small>Find us in Kharian</small></span><span aria-hidden="true">↗</span></a>
+      </nav>
       <ConsultationPromotion />
       <ClinicTeam />
       <CareShowcase />
@@ -360,7 +370,7 @@ export default function Home() {
         <div className="clinic-map-frame"><iframe title="Google Map — H&M Dental Care, Kharian Dinga Road, Kharian, Pakistan" src={`https://www.google.com/maps?q=${encodeURIComponent(clinic.mapQuery)}&output=embed`} width="100%" height="460" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /><div className="map-address-card"><span className="map-pin"><Icon name="pin" /></span><div><strong>H&M Dental Care</strong><p>{ADDRESS}</p><a href={MAP} target="_blank" rel="noreferrer">Open in Google Maps ↗</a></div></div></div>
       </section>
     </main>
-    <footer><div className="container footer-main"><div><Brand /><p>Thoughtful care.<br />For the smiles that matter most.</p></div><div><h3>Explore</h3>{links.slice(1).map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</div><div className="footer-contact"><h3>Come say hello</h3><p>{ADDRESS}</p><a href={PHONE}>{clinic.phone}</a><a href={MAP} target="_blank" rel="noreferrer">Google Maps directions ↗</a></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} H&M Dental Care.</span><span></span><a href="#home">Back to top ↑</a></div></footer>
+    <SiteFooter />
     <a className="floating-call" href={PHONE} aria-label="Call H&M Dental Care"><Icon name="phone" /><span>Call the clinic</span></a>
   </>;
 }

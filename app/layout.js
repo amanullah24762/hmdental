@@ -10,7 +10,7 @@ export const metadata = {
   title: 'H&M Dental Care | Website Concept',
   description: 'A family-focused dental website concept for H&M Dental Care in Kharian, Pakistan. Explore care categories and contact the clinic.',
   robots: { index: false, follow: false },
-  icons: { icon: '/images/hm-dental-logo.jpeg' },
+  icons: { icon: '/images/hm-dental-logo.webp' },
 };
 
 export default function RootLayout({ children }) {

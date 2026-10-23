@@ -11,7 +11,7 @@ export const services = [
       "Review your dental history",
       "Plan your next steps"
     ],
-    "image": "/images/services/dentist-consultation.png"
+    "image": "/images/services/dentist-consultation.webp"
   },
   {
     "slug": "teeth-cleaning",
@@ -24,7 +24,7 @@ export const services = [
       "Arrange a cleaning visit",
       "Ask about oral hygiene"
     ],
-    "image": "/images/services/teeth-cleaning.png"
+    "image": "/images/services/teeth-cleaning.webp"
   },
   {
     "slug": "tooth-fillings",
@@ -37,7 +37,7 @@ export const services = [
       "Discuss filling options",
       "Ask about treatment costs"
     ],
-    "image": "/images/services/tooth-fillings.png"
+    "image": "/images/services/tooth-fillings.webp"
   },
   {
     "slug": "tooth-extractions",
@@ -50,7 +50,7 @@ export const services = [
       "Discuss the procedure",
       "Ask about aftercare"
     ],
-    "image": "/images/services/tooth-extractions.png"
+    "image": "/images/services/tooth-extractions.webp"
   },
   {
     "slug": "crowns-bridges",
@@ -63,7 +63,7 @@ export const services = [
       "Ask about crown options",
       "Plan your appointments"
     ],
-    "image": "/images/services/crowns-bridges.png"
+    "image": "/images/services/crowns-bridges.webp"
   },
   {
     "slug": "root-canals",
@@ -76,7 +76,7 @@ export const services = [
       "Discuss the treatment plan",
       "Arrange follow-up care"
     ],
-    "image": "/images/services/root-canals.png"
+    "image": "/images/services/root-canals.webp"
   },
   {
     "slug": "teeth-whitening",
@@ -89,7 +89,7 @@ export const services = [
       "Review whitening suitability",
       "Ask about aftercare"
     ],
-    "image": "/images/services/teeth-whitening.png"
+    "image": "/images/services/teeth-whitening.webp"
   },
   {
     "slug": "bleeding-gums",
@@ -102,7 +102,7 @@ export const services = [
       "Arrange a gum assessment",
       "Discuss ongoing care"
     ],
-    "image": "/images/services/bleeding-gums.png"
+    "image": "/images/services/bleeding-gums.webp"
   },
   {
     "slug": "bad-breath",
@@ -115,7 +115,7 @@ export const services = [
       "Arrange an oral examination",
       "Ask about care options"
     ],
-    "image": "/images/services/bad-breath.png"
+    "image": "/images/services/bad-breath.webp"
   },
   {
     "slug": "tooth-gap-closure",
@@ -128,7 +128,7 @@ export const services = [
       "Explore suitable options",
       "Request a treatment plan"
     ],
-    "image": "/images/services/tooth-gap-closure.png"
+    "image": "/images/services/tooth-gap-closure.webp"
   },
   {
     "slug": "orthodontics",
@@ -141,7 +141,7 @@ export const services = [
       "Ask about suitable options",
       "Plan your treatment visits"
     ],
-    "image": "/images/services/orthodontics.png"
+    "image": "/images/services/orthodontics.webp"
   },
   {
     "slug": "jaw-fracture-treatment",
@@ -154,7 +154,7 @@ export const services = [
       "Arrange an assessment",
       "Confirm treatment arrangements"
     ],
-    "image": "/images/services/jaw-fracture-treatment.png"
+    "image": "/images/services/jaw-fracture-treatment.webp"
   },
   {
     "slug": "laser-filling",
@@ -167,7 +167,7 @@ export const services = [
       "Discuss suitability",
       "Confirm treatment details"
     ],
-    "image": "/images/services/laser-filling.png"
+    "image": "/images/services/laser-filling.webp"
   },
   {
     "slug": "dental-x-rays",
@@ -180,6 +180,6 @@ export const services = [
       "Arrange your visit",
       "Review findings with your dentist"
     ],
-    "image": "/images/services/dental-x-rays.png"
+    "image": "/images/services/dental-x-rays.webp"
   }
 ];
