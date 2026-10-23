@@ -219,3 +219,13 @@ footer.hm-footer{background:#f4f8fc;color:#173e61;padding:40px 20px 0;border-top
   .hm-promotion-copy>p:not(.eyebrow){font-size:14px;line-height:1.8}
   .hm-promotion-copy small{font-size:11px;line-height:1.7}
 }
+
+/* Keep step numbers intact instead of letting flexbox wrap their digits. */
+.journey-list li>span{flex-shrink:0;white-space:nowrap;overflow-wrap:normal;word-break:normal;width:72px;min-width:72px;font-variant-numeric:tabular-nums}
+.journey-list li>p{flex:1;min-width:0}
+@media(max-width:800px){
+  .journey-list{gap:16px;margin-bottom:28px}
+  .journey-list li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;align-items:start}
+  .journey-list li>span{display:grid;place-items:center;width:48px;min-width:48px;height:48px;padding:0;border:0;border-radius:12px;background:#edf5fc;color:#286a9c;font-size:23px;line-height:1;font-weight:700}
+  .journey-list li>p{font-size:13px;line-height:1.75;margin:0;padding-top:2px}
+}
