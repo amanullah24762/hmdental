@@ -15,3 +15,36 @@
 @media(max-width:400px){.hm-promotion-copy{padding:24px 18px}.hm-promotion-copy .button{width:100%;padding-inline:16px}.hm-offer-doctors span{max-width:100%}}
 
 .home-services-more{display:flex;justify-content:center;margin-top:36px}
+
+/* H&M visual refinements: soft blue surfaces and consistent card details. */
+body{background:#fcfdff}
+.site-header{border-bottom:1px solid #dce7f0;box-shadow:0 8px 28px #102d4c08}
+.button{border-radius:12px;box-shadow:0 6px 16px #12497712}
+.button:focus-visible{outline:3px solid #45a6df;outline-offset:4px}
+.section-heading h2,.hm-team h2{letter-spacing:-1.5px}
+#treatments .treatment-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+#treatments .flip-treatment{border:1px solid #dce7f2;border-radius:20px;background:linear-gradient(145deg,#fff,#f3f8fd);box-shadow:0 8px 26px #123e6b06;overflow:hidden}
+#treatments .service-title{font-size:20px;line-height:1.35}
+#treatments .service-hint{margin-top:auto;color:#426d92}
+#treatments .treatment-back{background:linear-gradient(145deg,#0d3459,#155b92)}
+.home-services-more .button{background:#0c426e;color:white;padding-inline:30px}
+.hm-promotion{border:1px solid #194264;box-shadow:0 24px 64px #082c4d20;background:radial-gradient(ellipse at 100% 0%,#164f7b 0%,#0a2848 45%,#071e3c 85%)}
+.hm-promotion-copy .eyebrow{display:inline-block;padding:7px 12px;border:1px solid #85c9ff40;border-radius:30px;background:#9bd7ff0a;letter-spacing:1.5px}
+.hm-promotion-copy .button{background:#e9f6ff;color:#103e67;box-shadow:0 8px 24px #0002}
+.hm-offer-doctors span{background:#ffffff08;border-color:#86b7dc45}
+.hm-team .section-heading{padding-bottom:24px;border-bottom:1px solid #dce7f0}
+.hm-doctor-card{background:#fff;border:1px solid #dce7f0;border-radius:24px;box-shadow:0 12px 36px #0e35530a;transition:box-shadow .25s,transform .25s}
+.hm-doctor-info{position:relative;padding:30px 32px 34px;border-top:4px solid #7fb8dd}
+.hm-doctor-info .eyebrow{font-size:9px;letter-spacing:2px;color:#557d9d}
+.hm-doctor-info h3{font-size:clamp(23px,2.4vw,30px);line-height:1.25;color:#113758;letter-spacing:-.8px}
+.hm-doctor-info>p:not(.eyebrow){color:#4b6b85;font-size:14px}
+.hm-doctor-info .text-link{display:inline-flex;align-items:center;border-bottom:1px solid #aac8df;padding-bottom:7px;color:#155b92;font-weight:700;font-size:13px}
+.contact-card{border:1px solid #dce7f0;border-radius:22px;box-shadow:0 14px 40px #16385608}
+.faq-list details{border-bottom-color:#dce7f0}
+.faq-list details[open]{background:#eff6fc;border-radius:14px;padding-inline:20px}
+.dropdown-panel{border-radius:16px;box-shadow:0 16px 40px #12365316}
+@media(hover:hover){.hm-doctor-card:hover{transform:translateY(-4px);box-shadow:0 20px 46px #0e355315}#treatments .flip-treatment:hover{border-color:#7eb4dc}.hm-promotion-copy .button:hover{background:#fff}.home-services-more .button:hover{background:#175d92}}
+@media(max-width:900px){#treatments .treatment-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+@media(max-width:560px){#treatments .service-title{font-size:16px}.hm-doctor-info{padding:24px}.hm-team .section-heading{padding-bottom:12px}.hm-promotion{border-radius:20px}.hm-promotion-copy .eyebrow{font-size:8px;letter-spacing:1px}}
+@media(max-width:380px){#treatments .treatment-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.hm-doctor-card{transition:none}.hm-doctor-card:hover{transform:none}}
