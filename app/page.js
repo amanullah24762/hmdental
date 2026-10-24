@@ -311,7 +311,6 @@ export default function Home() {
   const links = [['Home', 'home'], ['About', 'about'], ['Treatments', 'treatments'], ['Patient Care', 'patient-care'], ['FAQs', 'faq'], ['Contact', 'contact']];
   return <>
     <a href="#main" className="skip-link">Skip to content</a>
-    <div className="topbar"><span>A little care. A lot to smile about.</span><a href={PHONE}>Kharian, Pakistan <span className="top-divider">/</span> {clinic.phone}</a></div>
     <SiteHeader />
     <main id="main">
       <section id="home" className="hero">
@@ -328,7 +327,6 @@ export default function Home() {
           <div className="hero-visit-strip"><span className="hero-strip-icon"><Icon name="tooth" /></span><p><span>LET’S PLAN YOUR VISIT</span> Your next smile starts with a conversation.</p><a href={PHONE}><Icon name="phone" /> {clinic.phone} <Icon name="arrow" /></a></div>
         </div>
       </section>
-      <div className="smile-ribbon" aria-hidden="true"><div>{[0, 1, 2, 3].map(item => <span key={item}>YOUR SMILE, OUR STARTING POINT <span className="ribbon-star">✳</span> CARE FOR EVERY GENERATION <span className="ribbon-star">✳</span> KHARIAN <span className="ribbon-star">✳</span></span>)}</div></div>
       <nav className="container visit-shortcuts" aria-label="Find what you need">
         <a href="#promotion"><span className="shortcut-icon"><Icon name="chat" /></span><span><strong>Free consultation</strong><small>Start with a conversation</small></span><span aria-hidden="true">↗</span></a>
         <a href="#doctors"><span className="shortcut-icon"><Icon name="heart" /></span><span><strong>Meet your dentists</strong><small>Get to know your care team</small></span><span aria-hidden="true">↗</span></a>

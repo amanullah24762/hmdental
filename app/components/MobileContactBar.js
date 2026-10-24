@@ -82,7 +82,7 @@ export default function MobileContactBar() {
             min-width: 0;
             min-height: 48px;
             padding: 8px;
-            border: 1px solid #3158ad;
+            border: 1px solid #0b2442;
             border-radius: 6px;
             font: inherit;
             font-size: 11px;
@@ -93,8 +93,8 @@ export default function MobileContactBar() {
             overflow-wrap: anywhere;
             cursor: pointer;
           }
-          .mobile-contact-bar a { color: #3158ad; background: #fff; }
-          .mobile-contact-bar button { color: #fff; background: #3158ad; }
+          .mobile-contact-bar a { color: #0b2442; background: #fff; }
+          .mobile-contact-bar button { color: #fff; background: #0b2442; }
           .mobile-contact-bar :focus-visible {
             outline: 3px solid #243e78;
             outline-offset: 3px;
