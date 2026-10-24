@@ -183,3 +183,25 @@ export const services = [
     "image": "/images/services/dental-x-rays.webp"
   }
 ];
+
+// Treatment-scene assets shared by related services.
+const practiceScenes = {
+  'dentist-consultation': 'examination',
+  'teeth-cleaning': 'cleaning',
+  'tooth-fillings': 'restoration',
+  'tooth-extractions': 'extraction',
+  'crowns-bridges': 'restoration',
+  'root-canals': 'root-canal',
+  'teeth-whitening': 'whitening',
+  'bleeding-gums': 'cleaning',
+  'bad-breath': 'examination',
+  'tooth-gap-closure': 'orthodontics',
+  'orthodontics': 'orthodontics',
+  'jaw-fracture-treatment': 'imaging',
+  'laser-filling': 'restoration',
+  'dental-x-rays': 'imaging',
+};
+
+export function practiceImageFor(service) {
+  return `/images/practice/${practiceScenes[service.slug] || 'examination'}.webp`;
+}

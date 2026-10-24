@@ -26,5 +26,5 @@ export default function ContactTools() {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     setStatus('Contact card downloaded. Open it to save the clinic to your contacts.');
   }
-  return <div className="contact-tools"><div><button type="button" onClick={saveContact}>Save clinic contact ↓</button><button type="button" onClick={copyAddress}>Copy address</button></div><p role="status">{status}</p></div>;
+  return <div className="contact-tools"><div className="contact-tool-actions"><button type="button" onClick={saveContact}>Save contact <span aria-hidden="true">↓</span></button><button type="button" onClick={copyAddress}>Copy address</button></div><p role="status" aria-live="polite">{status}</p></div>;
 }

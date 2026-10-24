@@ -1,0 +1,11 @@
+{
+  "terminal.integrated.gpuAcceleration": "off",
+  "terminal.integrated.shellIntegration.enabled": false,
+  "terminal.integrated.profiles.osx": {
+    "Clean zsh": {
+      "path": "/bin/zsh",
+      "args": ["-f"],
+      "env": { "PS1": "%n@%m %1~ %# " }
+    }
+  }
+}
