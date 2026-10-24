@@ -3,6 +3,7 @@ import './booking.css';
 import './navigation.css';
 import './alignment.css';
 import './hm-clinic.css';
+import './inner-pages.css';
 import BookingWidget from './components/BookingWidget';
 import MobileContactBar from './components/MobileContactBar';
 
