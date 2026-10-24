@@ -1,0 +1,54 @@
+/* Keep padding on each contact row so its tinted background stays edge to edge. */
+@media(max-width:600px) {
+  #contact .contact-row,
+  #contact .contact-row:last-child {
+    padding: 22px 20px;
+    margin: 0;
+  }
+  #contact .contact-icon { left: 20px; top: 22px; }
+  #contact .contact-row.contact-visit h3 { padding-left: 46px; min-height: 34px; margin-top: 0; }
+  #contact .contact-row address { overflow-wrap: anywhere; }
+  #contact .contact-row .disclaimer { font-size: 13px !important; line-height: 1.75; }
+  #contact .contact-tools>p { font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
+  #contact .phone-number { font-size: clamp(25px,7vw,32px); letter-spacing: -.7px; }
+  #contact .contact-content { max-width: 100%; }
+  #contact .contact-tools button { white-space: normal; }
+  .map-address-card>div { overflow-wrap: anywhere; }
+  .hm-footer-actions a { min-width: 0; }
+  .booking-progress { gap: 8px; }
+  .booking-progress li { white-space: normal; min-width: 0; }
+  .booking-progress li>span { flex-shrink: 0; }
+  .booking-field input, .booking-ready textarea { font-size: 16px; }
+}
+@media(max-width:800px) {
+  main .container { width: calc(100% - 36px); max-width: 1180px; margin-inline: auto; }
+  main .container .container { width: 100%; }
+  .inner-page .container { width: calc(100% - 36px); }
+  :is(.contact-section,.clinic-map-section,.inner-section,.visit-shortcuts,.showcase-stage)>* { min-width: 0; }
+  .site-header .brand { min-width: 0; flex-shrink: 1; }
+  .site-header .brand>span { white-space: normal; line-height: 1.2; }
+  .hm-promotion-copy .button { white-space: normal; }
+  .showcase-tabs { flex-wrap: wrap; }
+  .showcase-tabs button { min-width: 0; flex-basis: 140px; }
+  .inner-page .planner-result>div { gap: 12px; }
+}
+/* The desktop footer's fixed minimum columns did not fit tablet widths. */
+@media(min-width:768px) and (max-width:1100px) {
+  .hm-footer-content {
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    grid-template-areas: 'identity links' 'tagline links' 'visit visit' 'base base';
+    gap: 20px 28px;
+  }
+  .hm-footer-visit { margin-top: 12px; }
+  .hm-footer-base { margin-top: 8px; }
+}
+@media(max-width:380px) {
+  #contact .contact-row,#contact .contact-row:last-child { padding-inline: 16px; }
+  #contact .contact-icon { left: 16px; }
+  #contact .contact-tools>div { grid-template-columns: 1fr; }
+  .hm-footer-identity { gap: 10px; font-size: 21px; }
+  .hm-footer-actions { grid-template-columns: 1fr; }
+  .site-header .brand { font-size: 16px; }
+  .mobile-contact-bar { gap: 5px; }
+  .mobile-contact-bar a,.mobile-contact-bar button { padding-inline: 4px; font-size: 10px; }
+}
