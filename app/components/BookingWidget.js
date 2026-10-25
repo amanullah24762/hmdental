@@ -1,4 +1,5 @@
 'use client';
+import CloseIcon from './CloseIcon';
 
 import { useEffect, useRef, useState } from 'react';
 import { services } from './services';
@@ -135,8 +136,10 @@ export default function BookingWidget() {
           <a href={clinic.telephone}>Prefer to call? <strong>{clinic.phone} ↗</strong></a>
         </aside>
         <div className="booking-main">
-          <button className="booking-close" type="button" aria-label="Close booking" onClick={() => dialog.current?.close()}>×</button>
-          <div className="booking-step-label">LET’S PLAN YOUR VISIT <span>Step {step} of 3</span></div>
+          <div className="booking-heading-row">
+            <div className="booking-step-label">LET’S PLAN YOUR VISIT <span>Step {step} of 3</span></div>
+            <button className="booking-close" type="button" aria-label="Close booking" onClick={() => dialog.current?.close()}><CloseIcon /></button>
+          </div>
           <ol className="booking-progress" aria-label="Booking progress">{['Your care', 'Your time', 'Your details'].map((label, i) => <li key={label} className={step >= i + 1 ? 'is-active' : ''} aria-current={step === i + 1 ? 'step' : undefined}><span>{step > i + 1 ? '✓' : i + 1}</span>{label}</li>)}</ol>
           <h2 id="booking-title" ref={heading} tabIndex={-1}>{step === 1 ? 'What brings you in?' : step === 2 ? 'When suits you best?' : 'Let’s make the introduction.'}</h2>
           <p className="booking-subtitle">{step === 1 ? 'Choose a service. It’s okay if you’re not sure yet.' : step === 2 ? 'Choose your preference. The clinic will confirm availability.' : 'Your request will open in WhatsApp for you to review and send.'}</p>

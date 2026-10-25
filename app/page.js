@@ -1,4 +1,5 @@
 'use client';
+import CloseIcon from './components/CloseIcon';
 import SiteFooter from './components/SiteFooter';
 import PatientReviews from './components/PatientReviews';
 import ServiceBookingIcon from './components/ServiceBookingIcon';
@@ -259,7 +260,7 @@ function TreatmentCard({ title, description, icon }) {
       <span className="service-hint">Explore treatment <Icon name="arrow" /></span>
     </button>
     <div className="treatment-back" hidden={!expanded}>
-      <button type="button" className="treatment-close" aria-label={`Close ${title} details`} onClick={() => { setExpanded(false); requestAnimationFrame(() => card.current?.querySelector('.treatment-front')?.focus()); }}>×</button>
+      <button type="button" className="treatment-close" aria-label={`Close ${title} details`} onClick={() => { setExpanded(false); requestAnimationFrame(() => card.current?.querySelector('.treatment-front')?.focus()); }}><CloseIcon /></button>
       <h3>{title}</h3>
       <ul>{(topics[title] || [description]).map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
       <div className="service-card-actions"><Link className="service-read-more" href={service ? `/services/${service.slug}` : '/services'}>Read more <span><Icon name="arrow" /></span></Link><ServiceBookingIcon service={title} /></div>

@@ -1,4 +1,30 @@
 /* Keep padding on each contact row so its tinted background stays edge to edge. */
+.booking-heading-row { display: flex; align-items: center; gap: 14px; margin-top: -8px; margin-bottom: 24px; }
+body .booking-main .booking-heading-row .booking-step-label { flex: 1; min-width: 0; margin: 0; padding: 0; }
+body .booking-main .booking-heading-row .booking-close { position: static; flex: 0 0 40px; }
+body .booking-main .booking-close,
+body .treatment-back .treatment-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  padding: 0;
+  margin: 0;
+  top: 14px;
+  right: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body .booking-main .booking-close { background: #edf3f8; color: #405970; border: 1px solid #dce7f0; z-index: 3; }
+body .booking-main .booking-close:hover { background: #dfeaf3; }
+body .booking-close svg,body .treatment-close svg { display: block; width: 18px; height: 18px; flex-shrink: 0; }
+body .booking-main .booking-step-label { min-height: 40px; align-items: center; padding-right: 48px; gap: 12px; }
+body .booking-main .booking-step-label>span { flex-shrink: 0; white-space: nowrap; }
+@media(max-width:380px) {
+  body .booking-main .booking-step-label { flex-direction: column; align-items: flex-start; justify-content: center; gap: 5px; }
+}
 .service-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: auto; width: 100%; }
 .service-card-actions .service-read-more { margin-top: 0; align-self: center; }
 .service-booking-icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; padding: 0; border: 1px solid #ffffff65; border-radius: 12px; background: #ffffff12; color: #fff; cursor: pointer; }
@@ -8,14 +34,14 @@
 /* Shared service-card close target: centred glyph with room for the title. */
 body .treatment-back .treatment-close {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 14px;
+  right: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
   padding: 0;
   margin: 0;
   border: 1px solid #ffffff40;

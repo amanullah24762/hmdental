@@ -1,4 +1,5 @@
 'use client';
+import CloseIcon from './CloseIcon';
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
@@ -42,7 +43,7 @@ export default function ServiceFlipCard({ service }) {
       <button type="button" className="treatment-close" aria-label={`Close ${service.title} details`} onClick={event => {
         setExpanded(false);
         event.currentTarget.closest('article')?.querySelector('.treatment-front')?.focus();
-      }}>×</button>
+      }}><CloseIcon /></button>
       <h3>{service.title}</h3>
       <ul>{service.items.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
       <div className="service-card-actions"><Link className="service-read-more" href={`/services/${service.slug}`}>Read more <span><ServiceIcon arrow /></span></Link><ServiceBookingIcon service={service.title} /></div>
