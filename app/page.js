@@ -1,9 +1,11 @@
 'use client';
 import SiteFooter from './components/SiteFooter';
 import PatientReviews from './components/PatientReviews';
+import ServiceBookingIcon from './components/ServiceBookingIcon';
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import SiteHeader from './components/SiteHeader';
 import ContactTools from './components/ContactTools';
 import { practiceImageFor, services } from './components/services';
@@ -240,7 +242,8 @@ function HeroParticleNetwork() {
   return <canvas ref={canvasRef} className="hero-particle-canvas" aria-hidden="true" />;
 }
 
-function TreatmentCard({ title, description, icon, onInquire }) {
+function TreatmentCard({ title, description, icon }) {
+  const service = services.find(item => item.title === title);
   const [expanded, setExpanded] = useState(false);
   const card = useRef(null);
   useEffect(() => {
@@ -259,7 +262,7 @@ function TreatmentCard({ title, description, icon, onInquire }) {
       <button type="button" className="treatment-close" aria-label={`Close ${title} details`} onClick={() => { setExpanded(false); requestAnimationFrame(() => card.current?.querySelector('.treatment-front')?.focus()); }}>×</button>
       <h3>{title}</h3>
       <ul>{(topics[title] || [description]).map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
-      <button type="button" className="service-read-more" onClick={event => onInquire(title, event.currentTarget)}>Read more <span><Icon name="arrow" /></span></button>
+      <div className="service-card-actions"><Link className="service-read-more" href={service ? `/services/${service.slug}` : '/services'}>Read more <span><Icon name="arrow" /></span></Link><ServiceBookingIcon service={title} /></div>
     </div>
   </article>;
 }
@@ -338,7 +341,7 @@ export default function Home() {
       <PatientReviews />
       <CareShowcase />
       <section className="trust-band" aria-label="Our approach to care"><div className="container trust-grid">{[['heart', 'For the whole family', 'Every age. Every kind of smile.'], ['spark', 'A welcoming setting', 'Talk through your care with our team.'], ['chat', 'Clarity at every step', 'Questions deserve clear answers.'], ['leaf', 'Your comfort matters', 'A little reassurance goes a long way.']].map(([icon, title, text]) => <div className="trust-item" key={title}><Icon name={icon} /><div><h3>{title}</h3><p>{text}</p></div></div>)}</div></section>
-      <section id="treatments" className="section container" data-reveal><div className="section-heading"><div><p className="eyebrow">Our services</p><h2>A wide range of<br /><em>dental care.</em></h2></div><div className="section-aside"><p>From everyday questions to your next steps, explore a more considered approach to dental care.</p><p className="disclaimer">Contact the clinic to discuss treatment suitability and appointment availability.</p></div></div><div className="treatment-grid">{treatments.slice(0, 6).map(([title, description, icon]) => <TreatmentCard key={title} title={title} description={description} icon={icon} onInquire={inquire} />)}</div><div className="home-services-more"><a className="button" href="/services">View more services <Icon name="arrow" /></a></div></section>
+      <section id="treatments" className="section container" data-reveal><div className="section-heading"><div><p className="eyebrow">Our services</p><h2>A wide range of<br /><em>dental care.</em></h2></div><div className="section-aside"><p>From everyday questions to your next steps, explore a more considered approach to dental care.</p><p className="disclaimer">Contact the clinic to discuss treatment suitability and appointment availability.</p></div></div><div className="treatment-grid">{treatments.slice(0, 6).map(([title, description, icon]) => <TreatmentCard key={title} title={title} description={description} icon={icon} />)}</div><div className="home-services-more"><a className="button" href="/services">View more services <Icon name="arrow" /></a></div></section>
       <section id="about" className="about-section"><div className="container about-grid" data-reveal><div className="about-art"><Photo src={photos.room} alt="Illustration of a Pakistani dentist welcoming a mother and daughter" className="about-photo" /><div className="about-stamp"><Icon name="tooth" /><span>Thoughtful care.<br /><em>Human connection.</em></span></div></div><div className="about-copy"><p className="eyebrow">The heart of the experience</p><h2>A familiar place.<br /><em>A friendly welcome.</em></h2><p className="large-copy">A dental visit should begin with a conversation, not a feeling of uncertainty.</p><p>Explore dental care for your family in Kharian. Contact the clinic to discuss your concerns, ask about treatment options, and plan your next visit.</p><div className="about-points"><span><Icon name="heart" /> A thoughtful welcome for adults and children</span><span><Icon name="chat" /> Clear conversations about your dental needs</span></div><a className="text-link" href="#patient-care">Discover the patient experience <span>↗</span></a></div></div></section>
       <section id="patient-care" className="patient-journey">
         <div className="container patient-journey-grid">

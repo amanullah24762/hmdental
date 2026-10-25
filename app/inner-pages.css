@@ -8,6 +8,10 @@
 .treatment-faqs summary span { flex-shrink: 0; font-size: 20px; color: #12385e; }
 .treatment-faqs details[open] summary span { transform: rotate(45deg); }
 .treatment-faqs details p { margin: 0 0 16px; color: #4b6b85; font-size: 13px; line-height: 1.8; }
+.inner-detail .treatment-faqs { margin-top: 32px; padding: clamp(20px,3vw,30px); }
+.inner-detail article .treatment-faqs h2 { margin: 0 0 16px; font-size: clamp(22px,2.5vw,28px); }
+.inner-detail .treatment-faqs summary { font-size: 15px; min-height: 52px; }
+.inner-detail .treatment-faqs details p { font-size: 14px; }
 .doctor-photo-link { display: block; }
 .doctor-card-actions { display: flex; flex-wrap: wrap; gap: 16px 24px; }
 .doctor-photo-link:focus-visible,.hm-doctor-info a:focus-visible { outline: 3px solid #377caf; outline-offset: -3px; }

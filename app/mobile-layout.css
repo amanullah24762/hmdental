@@ -1,4 +1,10 @@
 /* Keep padding on each contact row so its tinted background stays edge to edge. */
+.service-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: auto; width: 100%; }
+.service-card-actions .service-read-more { margin-top: 0; align-self: center; }
+.service-booking-icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; padding: 0; border: 1px solid #ffffff65; border-radius: 12px; background: #ffffff12; color: #fff; cursor: pointer; }
+.service-booking-icon:hover { background: #ffffff26; }
+.service-booking-icon:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.service-booking-icon svg { display: block; }
 /* Shared service-card close target: centred glyph with room for the title. */
 body .treatment-back .treatment-close {
   position: absolute;

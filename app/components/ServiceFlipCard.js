@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ServiceBookingIcon from './ServiceBookingIcon';
 import { practiceImageFor } from './services';
 
 function ServiceIcon({ arrow = false, sparkle = false }) {
@@ -44,7 +45,7 @@ export default function ServiceFlipCard({ service }) {
       }}>×</button>
       <h3>{service.title}</h3>
       <ul>{service.items.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
-      <Link className="service-read-more" href={`/services/${service.slug}`}>Read more <span><ServiceIcon arrow /></span></Link>
+      <div className="service-card-actions"><Link className="service-read-more" href={`/services/${service.slug}`}>Read more <span><ServiceIcon arrow /></span></Link><ServiceBookingIcon service={service.title} /></div>
     </div>
   </article>;
 }
