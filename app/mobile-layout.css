@@ -1,4 +1,28 @@
 /* Keep padding on each contact row so its tinted background stays edge to edge. */
+/* Shared service-card close target: centred glyph with room for the title. */
+body .treatment-back .treatment-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ffffff40;
+  border-radius: 50%;
+  background: #ffffff12;
+  color: white;
+  font: 400 26px/1 Arial, sans-serif;
+  cursor: pointer;
+  z-index: 2;
+}
+body .treatment-back .treatment-close:hover { background: #ffffff26; transform: none; }
+body .treatment-back .treatment-close:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+body .treatment-back h3 { padding-right: 40px; }
 .patient-reviews { padding-block: clamp(44px,6vw,80px); background: #edf5fc; scroll-margin-top: 100px; }
 .patient-reviews-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 32px; margin-bottom: 28px; }
 .patient-reviews-heading h2 { font-size: clamp(30px,4vw,46px); line-height: 1.15; margin-bottom: 0; }
