@@ -2,14 +2,12 @@
 
 import BookingAction from './BookingAction';
 import Image from 'next/image';
+import Link from 'next/link';
+import { doctors } from './doctors';
 import { clinic } from './clinic';
 
 // Original clinic promotion and separate portrait crops from the supplied Facebook post.
 const promotionImage = '/images/hm-free-consultation-hd.webp';
-const doctors = [
-  { name: 'Dr. Hamza Anwar Chaudhary', title: 'Dental Surgeon', initials: 'H', image: '/images/dr-hamza-portrait.webp' },
-  { name: 'Dr. Maham Raza', title: 'Lady Dental Surgeon', initials: 'MR', image: '/images/dr-maham-raza-portrait.webp' },
-];
 
 export function ConsultationPromotion() {
   return <section id="promotion" className="container hm-promotion" aria-labelledby="promotion-title">
@@ -32,8 +30,8 @@ export default function ClinicTeam() {
   return <section id="doctors" className="container section hm-team" aria-labelledby="doctors-title">
     <div className="section-heading"><div><p className="eyebrow">Meet your dentists</p><h2 id="doctors-title">Two familiar faces.<br /><em>Care for your smile.</em></h2></div><p className="section-aside">Meet the doctors at H&amp;M Dental Care in Kharian. Arrange a visit and start a conversation about your dental care.</p></div>
     <div className="hm-doctor-grid">{doctors.map(doctor => <article className="hm-doctor-card" key={doctor.name}>
-      {doctor.image ? <Image sizes="(max-width: 700px) 100vw, 580px" className="hm-doctor-photo" src={doctor.image} alt={doctor.name} width={1122} height={1402} loading="lazy" /> : <div className="hm-doctor-initials" aria-hidden="true">{doctor.initials}</div>}
-      <div className="hm-doctor-info"><p className="eyebrow">H&amp;M Dental Care</p><h3>{doctor.name}</h3><p>{doctor.title}</p><BookingAction className="text-link" service={`Free consultation with ${doctor.name}`}>Request an appointment ↗</BookingAction></div>
+      <Link className="doctor-photo-link" href={`/doctors/${doctor.slug}`} aria-label={`View ${doctor.name}'s profile`}><Image sizes="(max-width: 700px) 100vw, 580px" className="hm-doctor-photo" src={doctor.image} alt={doctor.name} width={1122} height={1402} loading="lazy" /></Link>
+      <div className="hm-doctor-info"><p className="eyebrow">H&amp;M Dental Care</p><h3><Link href={`/doctors/${doctor.slug}`}>{doctor.name}</Link></h3><p>{doctor.title}</p><div className="doctor-card-actions"><Link className="text-link" href={`/doctors/${doctor.slug}`}><span>View full profile</span><span className="action-arrow" aria-hidden="true">↗</span></Link><BookingAction className="text-link" service={`Consultation with ${doctor.name}`}>Request an appointment ↗</BookingAction></div></div>
     </article>)}</div>
   </section>;
 }

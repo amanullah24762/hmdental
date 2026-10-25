@@ -5,6 +5,20 @@ import { clinic } from './clinic';
 
 export default function ContactTools() {
   const [status, setStatus] = useState('');
+  async function shareClinic() {
+    const text = `${clinic.name}\n${clinic.phone}\n${clinic.address}`;
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: clinic.name, text, url: clinic.mapURL });
+        setStatus('Clinic details shared.');
+      } else {
+        await navigator.clipboard.writeText(`${text}\n${clinic.mapURL}`);
+        setStatus('Clinic details copied. Paste them into a message to share.');
+      }
+    } catch (error) {
+      if (error.name !== 'AbortError') setStatus(`${text}\n${clinic.mapURL}`);
+    }
+  }
   async function copyAddress() {
     try {
       await navigator.clipboard.writeText(`${clinic.name}\n${clinic.address}\n${clinic.mapURL}`);
@@ -26,5 +40,5 @@ export default function ContactTools() {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     setStatus('Contact card downloaded. Open it to save the clinic to your contacts.');
   }
-  return <div className="contact-tools"><div className="contact-tool-actions"><button type="button" onClick={saveContact}>Save contact <span aria-hidden="true">↓</span></button><button type="button" onClick={copyAddress}>Copy address</button></div><p role="status" aria-live="polite">{status}</p></div>;
+  return <div className="contact-tools"><div className="contact-tool-actions"><button type="button" onClick={saveContact}>Save contact <span aria-hidden="true">↓</span></button><button type="button" onClick={copyAddress}>Copy address</button><button type="button" onClick={shareClinic}>Share clinic ↗</button></div><p role="status" aria-live="polite">{status}</p></div>;
 }

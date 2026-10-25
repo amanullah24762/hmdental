@@ -24,9 +24,10 @@ export default function TestimonialsSection({ testimonials = [], heading, descri
         {entries.map((item, index) => (
           <li key={item.id ?? index}>
             <figure className="clinic-testimonial-card">
+              {Number.isInteger(item.rating) && item.rating >= 1 && item.rating <= 5 && <div className="patient-review-stars" aria-label={`${item.rating} out of 5 stars`}><span aria-hidden="true">{'★'.repeat(item.rating)}{'☆'.repeat(5 - item.rating)}</span></div>}
               <blockquote><p>{item.quote}</p></blockquote>
               {typeof item.author === 'string' && item.author.trim() && (
-                <figcaption>{item.author}</figcaption>
+                <figcaption><span>{item.author}</span>{item.sourceURL && <a className="patient-review-source" href={item.sourceURL} target="_blank" rel="noreferrer">Google reviews ↗</a>}</figcaption>
               )}
             </figure>
           </li>

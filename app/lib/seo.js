@@ -4,7 +4,7 @@ const CLINIC_NAME = 'H&M Dental Care';
  * Build page metadata without assuming a public domain or social image.
  * Example: createPageMetadata({ title: 'About', description: approvedSummary })
  * Canonicals, when supplied, must be absolute HTTP(S) URLs.
- * Launch restrictions remain explicit; this helper cannot enable indexing.
+ * Metadata for public clinic pages.
  *
  * @param {{ title?: string, description?: string, canonicalUrl?: string,
  *   openGraphTitle?: string, openGraphDescription?: string }} options
@@ -38,7 +38,7 @@ export function createPageMetadata({
     title: { absolute: brandedTitle },
     ...(summary ? { description: summary } : {}),
     ...(canonical ? { alternates: { canonical } } : {}),
-    robots: { index: false, follow: false },
+    robots: { index: true, follow: true },
     openGraph: {
       title: openGraphTitle?.trim() || brandedTitle,
       ...(socialDescription ? { description: socialDescription } : {}),

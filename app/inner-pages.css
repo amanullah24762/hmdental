@@ -1,4 +1,48 @@
 /* Interior page rhythm, with fluid cards and room for touch controls. */
+.service-with-faqs { min-width: 0; }
+.treatment-faqs { margin-top: 14px; padding: 20px; background: #fff; border: 1px solid #dce7f0; border-radius: 16px; }
+.treatment-faqs h3 { font-size: 15px; line-height: 1.5; margin: 0 0 10px; color: #0b2442; }
+.treatment-faqs details+details { border-top: 1px solid #dce7f0; }
+.treatment-faqs summary { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 48px; padding-block: 12px; list-style: none; font-size: 13px; line-height: 1.6; cursor: pointer; }
+.treatment-faqs summary::-webkit-details-marker { display: none; }
+.treatment-faqs summary span { flex-shrink: 0; font-size: 20px; color: #12385e; }
+.treatment-faqs details[open] summary span { transform: rotate(45deg); }
+.treatment-faqs details p { margin: 0 0 16px; color: #4b6b85; font-size: 13px; line-height: 1.8; }
+.doctor-photo-link { display: block; }
+.doctor-card-actions { display: flex; flex-wrap: wrap; gap: 16px 24px; }
+.doctor-photo-link:focus-visible,.hm-doctor-info a:focus-visible { outline: 3px solid #377caf; outline-offset: -3px; }
+.doctor-profile { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.4fr); gap: clamp(28px,5vw,72px); align-items: start; }
+.doctor-profile>*,.doctor-profile-content { min-width: 0; }
+.doctor-profile>aside { border: 1px solid #dce7f0; border-radius: 24px; overflow: hidden; background: white; }
+.doctor-profile-photo { display: block; width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; object-position: top; }
+.doctor-profile-summary { padding: 26px; }
+.doctor-profile-summary h2 { font-size: 25px; line-height: 1.3; }
+.doctor-profile-summary .button { width: 100%; justify-content: center; white-space: normal; text-align: center; }
+.doctor-profile-content>section { margin-top: 32px; }
+.doctor-profile-content h2 { font-size: clamp(24px,2.5vw,32px); line-height: 1.3; margin-bottom: 16px; }
+.doctor-profile-content p,.doctor-profile-content li { color: #4b6b85; font-size: 15px; line-height: 1.85; }
+.doctor-profile-content ul { padding-left: 20px; }
+.doctor-profile-content .appointment-help-actions .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
+.doctor-profile-content .doctor-call-button { background: #fff; color: #0b2442; border: 1px solid #0b2442; box-shadow: none; }
+.doctor-profile-content .doctor-call-button:hover { background: #e6f0f8; color: #0b2442; }
+.doctor-call-button svg { flex-shrink: 0; }
+.doctor-profile-content li+li { margin-top: 10px; }
+.doctor-colleague { display: grid; gap: 8px; margin-top: 32px; padding: 24px; background: #edf5fc; border: 1px solid #dce7f0; border-radius: 16px; }
+.doctor-colleague span { font-size: 13px; color: #4b6b85; }
+.doctor-colleague strong { color: #0b2442; line-height: 1.5; }
+@media(max-width:700px) {
+  .doctor-profile { grid-template-columns: 1fr; }
+  .doctor-profile>aside { width: 100%; max-width: 440px; margin-inline: auto; }
+  .doctor-profile-summary { padding: 22px; }
+  .doctor-profile-content .appointment-help-actions { align-items: stretch; flex-direction: column; }
+  .doctor-profile-content .button { justify-content: center; }
+}
+.appointment-help-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-block: 22px; }
+.appointment-help-actions .button { white-space: normal; text-align: center; }
+.inner-page--contact .inner-concerns article { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.inner-page--contact .inner-concerns h2 { font-size: 25px; margin: 0; }
+.inner-page--contact .inner-concerns .button { margin-top: auto; white-space: normal; }
+.inner-page--contact .contact-tools { margin-top: 24px; }
 .inner-page .inner-section { padding-block: clamp(44px, 6vw, 88px); }
 .inner-page .inner-banner { background: linear-gradient(120deg,#081d35,#12385e); }
 .inner-page .inner-banner-layout { min-height: 310px; padding-block: 48px; gap: 40px; }

@@ -11,7 +11,7 @@ export default function SiteFooter() {
       <p className="hm-footer-tagline">A little care. A brighter smile.</p>
       <nav className="hm-footer-links" aria-label="Footer navigation">
         <Link href="/about">About</Link><Link href="/services">Services</Link>
-        <Link href="/#doctors">Our doctors</Link><Link href="/faq">FAQs</Link>
+        <Link href="/doctors">Our doctors</Link><Link href="/faq">FAQs</Link><Link href="/contact">Contact</Link><Link href="/appointments">Appointments</Link><Link href="/#reviews">Patient feedback</Link>
       </nav>
       <div className="hm-footer-visit">
         <span className="hm-footer-location">VISIT US IN KHARIAN</span>
