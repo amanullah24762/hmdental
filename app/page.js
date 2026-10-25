@@ -280,7 +280,7 @@ function SmileComparison() {
       <div className="comparison-divider" aria-hidden="true"><span>‹ <span>›</span></span></div>
       <input className="comparison-range" type="range" min="0" max="100" value={position} onChange={event => setPosition(Number(event.target.value))} aria-label="Before and after image comparison" aria-valuetext={`${position}% before image visible`} />
     </div>}
-    <p className="comparison-disclaimer">Reference images from <a href="https://alqarndentalconsultants.pk/" target="_blank" rel="noreferrer">Al-Qaran Dental Consultants</a>; these are not H&amp;M Dental Care patient results.</p>
+    {/* <p className="comparison-disclaimer">Reference images from <a href="https://alqarndentalconsultants.pk/" target="_blank" rel="noreferrer">Al-Qaran Dental Consultants</a>; these are not H&amp;M Dental Care patient results.</p> */}
   </div>;
 }
 
