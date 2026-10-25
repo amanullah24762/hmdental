@@ -126,6 +126,7 @@ export default function BookingWidget() {
   return <>
     <button ref={trigger} type="button" className="booking-launcher" onClick={event => open('', event.currentTarget)}><span className="booking-launcher-icon" aria-hidden="true">▦</span><span>Book a Visit<small>Your smile starts here</small></span><span aria-hidden="true">↗</span></button>
     <dialog ref={dialog} className="booking-dialog" aria-labelledby="booking-title" onKeyDown={containTab} onClose={() => { const target = returnFocus.current; (target?.isConnected && target.getClientRects().length ? target : trigger.current)?.focus(); }} onClick={event => { if (event.target === event.currentTarget) { const rect = event.currentTarget.getBoundingClientRect(); if (event.clientX < rect.left || event.clientY < rect.top || event.clientX > rect.right || event.clientY > rect.bottom) dialog.current?.close(); } }}>
+      <button className="booking-close" type="button" aria-label="Close booking" onClick={() => dialog.current?.close()}><CloseIcon /></button>
       <div className="booking-layout">
         <aside className="booking-welcome">
           <span className="booking-clinic">H&M DENTAL CARE · KHARIAN</span>
@@ -138,7 +139,6 @@ export default function BookingWidget() {
         <div className="booking-main">
           <div className="booking-heading-row">
             <div className="booking-step-label">LET’S PLAN YOUR VISIT <span>Step {step} of 3</span></div>
-            <button className="booking-close" type="button" aria-label="Close booking" onClick={() => dialog.current?.close()}><CloseIcon /></button>
           </div>
           <ol className="booking-progress" aria-label="Booking progress">{['Your care', 'Your time', 'Your details'].map((label, i) => <li key={label} className={step >= i + 1 ? 'is-active' : ''} aria-current={step === i + 1 ? 'step' : undefined}><span>{step > i + 1 ? '✓' : i + 1}</span>{label}</li>)}</ol>
           <h2 id="booking-title" ref={heading} tabIndex={-1}>{step === 1 ? 'What brings you in?' : step === 2 ? 'When suits you best?' : 'Let’s make the introduction.'}</h2>
