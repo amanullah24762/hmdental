@@ -1,4 +1,117 @@
+/* Compact, factual clinic counts; content remains visible without animation. */
+.clinic-glance { padding-block: clamp(40px,5vw,64px); background: #fcfdff; text-align: center; }
+.clinic-glance .eyebrow { margin-bottom: 14px; }
+.clinic-glance h2 { margin: 0 0 28px; font-size: clamp(26px,3.5vw,40px); line-height: 1.2; text-wrap: balance; }
+.clinic-glance-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 22px; margin-inline: auto; }
+.clinic-glance-card { display: flex; flex-direction: column; align-items: center; min-width: 0; padding: clamp(24px,4vw,40px); background: #eaf3fa; color: #0b2442; border: 1px solid #cbddeb; border-radius: 20px; }
+.clinic-glance-number { font-size: clamp(40px,5vw,60px); line-height: 1.1; margin: 20px 0 10px; font-variant-numeric: tabular-nums; }
+.clinic-glance-card h3 { margin: 0 0 12px; font-size: 20px; line-height: 1.4; }
+.clinic-glance-card>span { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-size: 14px; line-height: 1.6; }
+.clinic-glance-card>span svg { width: 14px; height: 14px; flex-shrink: 0; }
+.clinic-glance-card:focus-visible { outline: 3px solid #377caf; outline-offset: 4px; }
+@media(prefers-reduced-motion:no-preference) {
+  .clinic-glance.has-entered .clinic-glance-card { animation: clinic-glance-enter .6s ease-out both; }
+  .clinic-glance.has-entered .clinic-glance-card:nth-child(2) { animation-delay: .12s; }
+  .clinic-glance.has-entered .clinic-glance-card:nth-child(3) { animation-delay: .24s; }
+  .clinic-glance.has-entered .clinic-glance-card:nth-child(4) { animation-delay: .36s; }
+}
+@keyframes clinic-glance-enter { from { opacity: .35; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@media(max-width:1000px) {
+  .clinic-glance-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:480px) {
+  .clinic-glance-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+/* Interior pages share the homepage's two light surfaces. */
+.inner-page {
+  --page-surface: #fcfdff;
+  --page-tint: #eaf3fa;
+  --card-surface: var(--page-tint);
+  background: var(--page-surface);
+}
+.inner-page > .inner-section:not(.inner-tint) { background: var(--page-surface); }
+.inner-page .inner-tint {
+  --card-surface: var(--page-surface);
+  background: var(--page-tint);
+}
+/* Keep container widths while extending these section colours to the edges. */
+.inner-page > .hm-team,
+.inner-page > .related-services {
+  --card-surface: var(--page-surface);
+  background: var(--page-tint);
+  box-shadow: 0 0 0 100vmax var(--page-tint);
+  clip-path: inset(0 -100vmax);
+  padding-block: clamp(44px,6vw,88px);
+}
+.inner-page :is(.hm-doctor-card,.flip-treatment,.treatment-faqs,.inner-faq details,.inner-concerns article,.inner-advantage,.inner-note,.inner-visit-steps>div) {
+  background: var(--card-surface);
+}
+.inner-page :is(.visit-planner,.doctor-colleague,.doctor-profile-summary,.inner-sidebar) {
+  background: var(--page-tint);
+}
+.inner-page .visit-checklist label:not(.is-checked) { background: var(--page-tint); }
+.inner-page .inner-tint .inner-tabs button:not([aria-pressed=true]) { background: var(--page-surface); }
+.inner-page > .extras-stack { background: var(--page-surface); }
+.inner-page .extras-stack > .visit-location {
+  background: var(--page-tint);
+  padding: clamp(24px,4vw,40px);
+  border-radius: 22px;
+}
 /* Shared editorial alignment for headings and supporting paragraphs. */
+/* Opaque section colours prevent nested translucent blues from stacking. */
+main:not(.inner-page) { --home-surface: #fcfdff; --home-tint: #eaf3fa; background: var(--home-surface); }
+/* Alternate the main content bands; use the opposite surface for their cards. */
+main:not(.inner-page) #doctors { background: var(--home-tint); box-shadow: 0 0 0 100vmax var(--home-tint); clip-path: inset(0 -100vmax); }
+main:not(.inner-page) #treatments { background: var(--home-surface); }
+main:not(.inner-page) #about { background: var(--home-tint); }
+main:not(.inner-page) #patient-care { background: var(--home-tint); }
+main:not(.inner-page) .patient-reviews { background: var(--home-surface); }
+main:not(.inner-page) .care-sequence { background: var(--home-tint); }
+main:not(.inner-page) #faq { background: var(--home-surface); }
+main:not(.inner-page)>section[aria-labelledby="location-heading"] { background: var(--home-tint); }
+main:not(.inner-page) #doctors .hm-doctor-card { background: var(--home-surface); }
+main:not(.inner-page) #treatments .flip-treatment { background: var(--home-tint); }
+#about .showcase-stage,
+#about .showcase-tabs button:not(.selected) { background: var(--home-tint); }
+main:not(.inner-page) .patient-review-actions article,
+main:not(.inner-page) .patient-reviews .clinic-testimonial-card { background: var(--home-tint); }
+/* Container-width sections still paint their background across the viewport. */
+main:not(.inner-page) #treatments { box-shadow: none; clip-path: none; }
+.hero-reference-card .hero-clinic-intro { max-width: 48ch; margin: 0 0 26px; font-size: 15px; line-height: 1.8; }
+#about>.care-showcase { margin-top: var(--home-section-gap); padding-block: var(--home-section-gap); background: var(--home-surface); box-shadow: 0 0 0 100vmax var(--home-surface); clip-path: inset(0 -100vmax); }
+#about>.care-showcase .showcase-tabs { margin-top: 0; }
+#patient-care .patient-journey-copy { padding-bottom: 0; }
+#patient-care .patient-journey-copy h2 { margin-bottom: 24px; }
+#patient-care .patient-journey-copy>p:not(.eyebrow) { max-width: 48ch; margin-bottom: 24px; line-height: 1.8; }
+#patient-care>.container+.container { padding-top: 48px; padding-bottom: 48px; }
+#patient-care .sequence-grid { margin-bottom: 0; }
+#contact.contact-section { padding-bottom: 36px; }
+#contact+.clinic-map-section { padding-bottom: clamp(48px,6vw,80px); }
+#contact+.clinic-map-section .map-heading { align-items: center; }
+#contact+.clinic-map-section .map-directions-button { align-self: center; }
+#appointment { padding-block: clamp(40px,5vw,64px); margin-bottom: 0; background: var(--home-tint); box-shadow: 0 0 0 100vmax var(--home-tint); clip-path: inset(0 -100vmax); }
+/* Shared outer spacing for the homepage bands, independent of card padding. */
+main:not(.inner-page) { --home-section-gap: clamp(48px,6vw,80px); }
+main:not(.inner-page) :is(#doctors,#treatments,#about,.patient-reviews,#faq) { padding-block: var(--home-section-gap); }
+main:not(.inner-page) #about { padding-bottom: 0; }
+main:not(.inner-page) #patient-care { padding-top: var(--home-section-gap); }
+main:not(.inner-page) #patient-care>.container+.container { padding-bottom: var(--home-section-gap); }
+main:not(.inner-page) #contact { padding-block: var(--home-section-gap); }
+main:not(.inner-page) #contact+.clinic-map-section { padding-block: var(--home-section-gap); background: var(--home-surface); box-shadow: 0 0 0 100vmax var(--home-surface); clip-path: inset(0 -100vmax); }
+main:not(.inner-page) .patient-reviews .clinic-testimonials-grid { max-width: none; width: 100%; }
+@media(max-width:800px) {
+  #contact+.clinic-map-section .map-heading { align-items: stretch; }
+  #contact+.clinic-map-section .map-directions-button { align-self: flex-start; }
+}
+@media(max-width:560px) {
+  .hero-reference-card .hero-clinic-intro { font-size: 14px; line-height: 1.75; }
+  .hero-reference-card .hero-primary-actions { padding-right: 64px; align-items: flex-start; flex-direction: column; }
+  .hero-reference-card .hero-primary-actions .button { max-width: 100%; white-space: normal; }
+  #patient-care>.container+.container { padding-top: 40px; padding-bottom: 40px; }
+  #patient-care .sequence-read-more { min-height: 44px; }
+  #contact.contact-section { padding-bottom: 24px; }
+  #contact+.clinic-map-section .map-directions-button { align-self: stretch; margin-top: 0; }
+}
 body :is(.section-heading,.showcase-heading,.comparison-heading,.patient-reviews-heading) {
   display: grid;
   grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr);

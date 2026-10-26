@@ -124,6 +124,7 @@ body :is(.service-read-more,.sequence-read-more)>span:has(svg) { display: inline
   .booking-field input, .booking-ready textarea { font-size: 16px; }
 }
 @media(max-width:800px) {
+  .site-header .site-navigation { align-items: stretch; }
   main .container { width: calc(100% - 36px); max-width: 1180px; margin-inline: auto; }
   main .container .container { width: 100%; }
   .inner-page .container { width: calc(100% - 36px); }

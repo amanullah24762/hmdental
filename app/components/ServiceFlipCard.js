@@ -30,7 +30,7 @@ export default function ServiceFlipCard({ service }) {
     onKeyDown={event => {
       if (event.key === 'Escape') {
         setExpanded(false);
-        event.currentTarget.querySelector('.treatment-front')?.focus();
+        requestAnimationFrame(() => card.current?.querySelector('.treatment-front')?.focus());
       }
     }}
   >
@@ -42,7 +42,7 @@ export default function ServiceFlipCard({ service }) {
     <div className="treatment-back" hidden={!expanded}>
       <button type="button" className="treatment-close" aria-label={`Close ${service.title} details`} onClick={event => {
         setExpanded(false);
-        event.currentTarget.closest('article')?.querySelector('.treatment-front')?.focus();
+        requestAnimationFrame(() => card.current?.querySelector('.treatment-front')?.focus());
       }}><CloseIcon /></button>
       <h3>{service.title}</h3>
       <ul>{service.items.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
